@@ -10,7 +10,6 @@ import android.widget.Toast;
 import android.view.View;
 import qz.lompat.activity_kedua;
 import qz.lompat.databinding.ActivityMainBinding;
-import com.itsaky.androidide.logsender.LogSender;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    // Remove this line if you don't want AndroidIDE to show this app's logs
-    LogSender.startLogging(this);
     super.onCreate(savedInstanceState);
     // Inflate and get instance of binding
     binding = ActivityMainBinding.inflate(getLayoutInflater());
