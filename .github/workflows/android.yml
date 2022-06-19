@@ -23,18 +23,18 @@ jobs:
     - name: memberikan Perizinan gradlew
       run: chmod +x gradlew
 
-      - name: Build debug APK
-        run: bash ./gradlew assembleDebug --stacktrace
+    - name: Build debug APK
+      run: bash ./gradlew assembleDebug --stacktrace
         
-      - name: Upload APK to Github Artifacts
-        uses: actions/upload-artifact@v1
+    - name: Upload APK to Github Artifacts
+      uses: actions/upload-artifact@v1
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_RELEASE }}
         with:
@@ -43,9 +43,9 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload APK to Release
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
+    - name: Upload APK to Release
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_RELEASE }}
         with:
