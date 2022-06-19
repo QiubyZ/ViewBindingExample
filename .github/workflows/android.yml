@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: set up JDK 11
+    - name: Setting JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
@@ -23,11 +23,11 @@ jobs:
     - name: memberikan Perizinan gradlew
       run: chmod +x gradlew
 
-    - name: Build debug APK
+    - name: Build debug Apk
       run: bash ./gradlew assembleDebug --stacktrace
 
-    - name: Upload APK to Github Artifacts
+    - name: Upload Ke dalam Artifact
       uses: actions/upload-artifact@v1
       with:
-          name: app
+          name: ViewBindingExample
           path: app/build/outputs/apk/debug/app-debug.apk
