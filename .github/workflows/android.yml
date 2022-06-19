@@ -37,7 +37,7 @@ jobs:
       uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_RELEASE }}
-        with:
+      with:
           tag_name: newtag
           release_name: Automatic Release
           draft: false
